@@ -1,0 +1,151 @@
+body{
+	background-color:darkgray;
+}
+.game{
+	display:flex;
+	justify-content:center;
+}
+.board{
+	display:inline-block;
+	background-color:lightgray;
+	border:4px outset gray;
+	border-radius: 10px;
+	padding:0px 5px 5px 5px;
+}
+.menu{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction:row;
+}
+button{
+	display:flex;
+	width:70px;
+	height:70px;
+	margin: 10px 55px;
+	font-size:41px;
+	background-color:lightgray;
+	border:3px outset gray;
+	border-radius:4px;
+}
+button:hover{
+	background-color:lightgray;
+}
+button:active{
+	background-color:lightgray;
+	border-top:6px solid gray;
+	border-left:6px solid gray;
+	border-right:1.5px solid gray;
+	border-bottom:1.5px solid gray;
+}
+.menu div{
+	font-family: 'Orbitron', monospace;
+	width:130px;
+	height:62px;
+	text-align:center;
+	font-size:50px;
+	color:red;
+	background-color:darkred;
+	border:3px outset gray;
+	user-select:none;
+	cursor:default;
+	outline:none;
+	caret-color:transparent;
+}
+.menu div::selection {
+	background: transparent;
+}
+.diff input{
+	width:60px;
+	height:30px;
+	font-size:22px;
+	text-align:center;
+	margin:0px 10px 0px 10px;
+}
+.diff input[type=number]::-webkit-outer-spin-button,
+.diff input[type=number]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+.diff input[type=number] {
+	-moz-appearance: textfield;
+}
+table{
+	border-collapse:collapse;
+	justify-content: center;
+	gap:2px;
+	border:5px outset gray;
+}
+.table{
+	display:flex;
+	justify-content:center;
+}
+td{
+	background-color:lightgray;
+	text-align:center;
+	border:1px solid black;
+	user-select:none;
+	cursor:default;
+	outline:none;
+	caret-color:transparent;
+	min-width:32px;
+}
+td:not(.clicked):hover{
+	background-color:gray;
+}
+.diff{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+.diff button{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	font-size:17px;
+	font-family: 'Orbitron', monospace;
+	height:50px;
+	width:80px;
+	margin: 8px 40px;
+}
+.pressed{
+	border-top:6px solid gray;
+	border-left:6px solid gray;
+	border-right:1.5px solid gray;
+	border-bottom:1.5px solid gray;
+	pointer-events:none;
+}
+.p2{
+	background-color:darkgreen !important;
+	color:lightgreen !important;
+}
+.instructions{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	flex-direction:column;
+}
+.sheet{
+	display:inline-block;
+	background-color:white;
+	padding:10px;
+	position:fixed;
+	max-height:95vh;
+	overflow-y:auto;
+	top:10px;
+}
+.play{
+	display:flex;
+	justify-content:center;
+	padding:0;
+}
+.play button{
+	width:110px;
+	height:70px;
+	justify-content:center;
+	align-items:center;
+	border-radius:7px;
+}
+.hide{
+	display:none;
+}

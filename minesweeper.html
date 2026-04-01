@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="minesweeper.css">
+	</head>
+	<body>
+		<div class = "instructions" id="overlay">
+			<div class="sheet">
+				<h1 class="play">Welcome to Minesweeper<h1>
+				<h2 class="play">Instructions<h2>
+				<div>
+					<p>Press a cell to reveal it. The number on it indicates how many bombs are nearby</br>
+					   that cell veticaly, horizontaly, and diagonaly.</br></br>
+					   💣 In singleplayer, discovering a bomb loses the game</br>
+					   To win the game, discover all cells without the bombs</br></br>
+					   🚩 Right-click the cell to flag it if you believe there is a bomb</br>
+					   You can not reveal the bomb this way and you will avoit it.</br>
+					   (SMALL TIP) if you have that many flags that sais a number, you can click it</br>
+					   and reveal all it's neighbours, even bombs if the flag is placed incorrectly.</br></br>
+					   The game menu is on top of the board <p style="color:red; font-family: 'Orbitron', monospace;">010 🙂 000<p>
+					   On the left it is the mine counter, on the right is the timer,</br>
+					   and on the middle is the 'New Game' button.</br></br>
+					   On the bottom of the board are the map size options</br>
+					   There are presetted small(9x9 with 10 bombs),medium(16x16 with 40 bombs)</br>
+					   and large(16x30 with 99 bombs).</br> 
+					   Customize button creates a map exacly how you like.</br>
+					   Adjust the map size and mine numbers from the inputs.</br></br>
+					   To enter multiplayer mode, press right click on the 'New Game' button</br>
+					   On the left is RED players' score, on the right GREEN players' score.</br>
+					   In the middle, the 'NewGame' button shows who's turn it is by it's color.</br>
+					   +2 point for clicking on a safe cell</br>
+					   +5 points for flagging a bomb</br>
+					   +0 for flagging a wrong cell and it will be revealed</br>
+					   -10 points for clicking a bomb cell</br></br>
+					   I hope you enjoy the game! Have fun!</p>
+				</div>
+				<div class="play"><button onclick="startGame()">Play</button></div>
+			</div>
+		</div>
+		<div class="game">
+			<div class="board">
+				<div class="menu" id="menu">
+					<!-- <input id="bombRemain" onkeydown="return false" onpaste="return false" ondrop="return false" autocomplete="off" readonly> -->
+					<div id="bombRemain" onkeydown="return false" onpaste="return false" ondrop="return false" autocomplete="off" readonly></div>
+					<button id="face"></button>
+					<!-- <input id="counter" onkeydown="return false" onpaste="return false" ondrop="return false" autocomplete="off" readonly> -->
+					<div id="counter" onkeydown="return false" onpaste="return false" ondrop="return false" autocomplete="off" readonly></div>
+				</div>
+				<div class="table">
+					<table id="minesMap"></table>
+				</div>
+				<div class="diff">
+					<button id="small" style="color:green">small</button>
+					<button id="med" style="color:yellow">medium</button>
+					<button id="large" style="color:red">large</button>
+				</div>
+				<div class="diff">
+					<div class="customs">
+						<input id="mapRows" type="number" placeholder="rows">
+						<input id="mapCells" type="number" placeholder="cols">
+						<input id="mapMines" type="number" max="999" placeholder="mines">
+					</div>
+					<button id="customize" style="color:white;">custom</button>
+				</div>
+			</div>
+			</div>
+		</div>
+		<script src="minesweeper.js"></script>
+	</body>
+</html>
