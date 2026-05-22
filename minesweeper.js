@@ -127,6 +127,7 @@ function win(v){
 			counter.textContent = "TIE";
 			flagNum.textContent = "TIE";
 		}
+		condition.style.backgroundColor = "lightgray";
 	}
 }
 
@@ -210,6 +211,10 @@ function unlock(cel,v,i,j,boom){    //Afiseaza casuta
 					else counter.textContent = "-99";
 				}
 				casute--;
+				if (casute === 0){
+					win(v);
+					return;
+				}
 			}
 		}
 		else{
@@ -271,8 +276,8 @@ function unlock(cel,v,i,j,boom){    //Afiseaza casuta
 				countStartStop();
 				condition.textContent = "😎";
 				win(v);
+				return;
 			}
-			return;
 		}
 	}
 		
@@ -283,6 +288,7 @@ function unlock(cel,v,i,j,boom){    //Afiseaza casuta
 				countStartStop();
 				condition.textContent = "😎";
 				win(v);
+				return;
 			}
 		}
 		
@@ -435,7 +441,7 @@ function newGame(){
 					oneClick = false;
 					unlock(cel,v,i,j,boom);
 				}
-				if(players)
+				if(players && casure > 0)
 					if(condition.style.backgroundColor == "lightcoral")
 						condition.style.backgroundColor = "lightgreen";
 					else condition.style.backgroundColor = "lightcoral";
