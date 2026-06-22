@@ -211,10 +211,6 @@ function unlock(cel,v,i,j,boom){    //Afiseaza casuta
 					else counter.textContent = "-99";
 				}
 				casute--;
-				if (casute === 0){
-					win(v);
-					return;
-				}
 			}
 		}
 		else{
@@ -232,6 +228,11 @@ function unlock(cel,v,i,j,boom){    //Afiseaza casuta
 	cel.style.backgroundColor = "darkgray";
 		
 	cel.textContent = v[i][j];
+	
+	if (casute === 0){
+		win(v);
+		return;
+	}
 	
 	if([1,2,3,4,5,6,7,8].includes(v[i][j])){
 		numCol(map.rows[i].cells[j],v,i,j);
@@ -441,8 +442,10 @@ function newGame(){
 					oneClick = false;
 					unlock(cel,v,i,j,boom);
 				}
-				if(players && casure > 0)
-					if(condition.style.backgroundColor == "lightcoral")
+				if(players)
+					if (casute == 0)
+						{condition.style.backgroundColor == "lightgray";}
+					else if(condition.style.backgroundColor == "lightcoral")
 						condition.style.backgroundColor = "lightgreen";
 					else condition.style.backgroundColor = "lightcoral";
 			});
@@ -501,7 +504,9 @@ function newGame(){
 							unlock(cel,v,i,j,boom);
 							noPoints = false;
 						}
-						if(condition.style.backgroundColor == "lightcoral")
+						if (casute == 0)
+							{condition.style.backgroundColor == "lightgray";}
+						else if(condition.style.backgroundColor == "lightcoral")
 							condition.style.backgroundColor = "lightgreen";
 						else condition.style.backgroundColor = "lightcoral";
 					}
@@ -580,6 +585,9 @@ small.addEventListener("click", () => {    //Generating small map
 	large.classList.remove("pressed");
 	newGame();
 	if(!players)clearInterval(time);
+	mapRows.value = "";
+	mapCells.value = "";
+	mapMines.value = "";
 });
 
 med.addEventListener("click", () => {    //Generating medium map
@@ -593,6 +601,9 @@ med.addEventListener("click", () => {    //Generating medium map
 	large.classList.remove("pressed");
 	newGame();
 	if(!players)clearInterval(time);
+	mapRows.value = "";
+	mapCells.value = "";
+	mapMines.value = "";
 });
 
 large.addEventListener("click", () => {    //Generating large map
@@ -606,6 +617,9 @@ large.addEventListener("click", () => {    //Generating large map
 	large.classList.add("pressed");
 	newGame();
 	if(!players)clearInterval(time);
+	mapRows.value = "";
+	mapCells.value = "";
+	mapMines.value = "";
 });
 
 custom.addEventListener("click", () => {    //Generating large map
@@ -631,6 +645,9 @@ custom.addEventListener("click", () => {    //Generating large map
 	large.classList.remove("pressed");
 	newGame();
 	if(!players)clearInterval(time);
+	mapRows.value = "";
+	mapCells.value = "";
+	mapMines.value = "";
 });
 
 function startGame(){
